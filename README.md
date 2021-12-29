@@ -10,16 +10,16 @@ Name, Video URL, Groups
 # Groups
 Each technique belongs to a majors groups subvidided into smaller groups. E.g.:
 
-Nage-waza (técnicas de arremesso, 投げ技)
-- Tachi-waza (técnicas em pé)
-- Te-waza (técnicas de braço, 手技)
-- Koshi-waza (técnicas de quadril, 腰技)
-- Ashi-waza (técnicas de perna, 足技)
-- Sutemi-waza (técnicas de sacrifício, 捨身技)
-- Mae-sutemi-waza (técnicas de sacrifício para frente)
-- Yoko-sutemi-waza (técnicas de sacrifício para o lado, 橫捨身技)
+Nage-waza (throwing techniques, 投げ技)
+- Tachi-waza (standing techniques)
+- Te-waza (arm techniques, 手技)
+- Koshi-waza (hip techniques, 腰技)
+- Ashi-waza (leg techniques, 足技)
+- Sutemi-waza (sacrifice techniques, 捨身技)
+- Mae-sutemi-waza (forward sacrifice techniques)
+- Yoko-sutemi-waza (sacrificing techniques to the side, 橫捨身技)
     
-Katame-waza (técnicas de domínio no solo)
-- Osaekomi-waza ou osae-waza (técnicas de imobilização, 押込技)
-- Shime-waza (técnicas de estrangulamento, 絞技)
-- Kansetsu-waza (técnicas de luxação, 関節技)
+Katame-waza (ground techniques)
+- Osaekomi-waza or osae-waza (immobilization techniques, 押込技)
+- Shime-waza (choke techniques, 絞技)
+- Kansetsu-waza (dislocation techniques, 関節技) 
