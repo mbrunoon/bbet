@@ -5,10 +5,14 @@
 # Techniques
 Judo more then 100 techniques dividide between different groups and subgroups
 
-Name, Video URL, Groups
+Fields: Name, Video URL, Groups
 
 # Groups
-Each technique belongs to a majors groups subvidided into smaller groups. E.g.:
+Each technique belongs to a majors groups subvidided into smaller groups.
+
+Fields: Name, MajorGroup
+
+Eg.:
 
 Nage-waza (throwing techniques, 投げ技)
 - Tachi-waza (standing techniques)
@@ -23,3 +27,10 @@ Katame-waza (ground techniques)
 - Osaekomi-waza or osae-waza (immobilization techniques, 押込技)
 - Shime-waza (choke techniques, 絞技)
 - Kansetsu-waza (dislocation techniques, 関節技) 
+
+
+Development
+
+Ruby 3
+Rails 7
+Rspec
