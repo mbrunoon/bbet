@@ -17,10 +17,6 @@ RSpec.describe "/techniques", type: :request do
     }    
   }
 
-  # This should return the minimal set of values that should be in the headers
-  # in order to pass any filters (e.g. authentication) defined in
-  # TechniquesController, or in your router and rack
-  # middleware. Be sure to keep this updated too.
   let(:valid_headers) {
     {
       "content-type" => "application/json"
