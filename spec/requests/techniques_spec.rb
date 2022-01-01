@@ -3,17 +3,23 @@ require 'rails_helper'
 
 RSpec.describe "/techniques", type: :request do
 
+  before(:all) do
+    @group = Group.create(:name => "Nage-waza")
+  end
+
   let(:valid_attributes) {
     {
-      "name" => "O-soto-gari",
-      "url"=> "https://www.youtube.com/watch?v=c-A_nP7mKAc"
+      :name => "O-soto-gari",
+      :url => "https://www.youtube.com/watch?v=c-A_nP7mKAc",
+      :group => @group
     }
   }
 
   let(:invalid_attributes) {
     {
-      "name" => "",
-      "url" => ""
+      :name => "",
+      :url => "",
+      :group => 0
     }    
   }
 

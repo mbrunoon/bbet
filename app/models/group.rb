@@ -1,5 +1,6 @@
 class Group < ApplicationRecord
 
+
 	validates :name, presence: true
 
 	validate :major_group_cannot_be_zero
