@@ -2,7 +2,7 @@ class CreateGroups < ActiveRecord::Migration[7.0]
   def change
     create_table :groups do |t|
       t.string :name
-      t.integer :major_group
+      t.references :group, null: true
 
       t.timestamps
     end

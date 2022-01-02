@@ -2,22 +2,27 @@ require 'rails_helper'
 
 RSpec.describe "/groups", type: :request do
 
+  before(:all) do 
+    @nagewaza = Group.create(name: "Nage-waza")
+  end
+
+
   let(:valid_attributes) {
     {
-      "name" => "Nage-waza"
+      "name" => "Tachi-waza",
+      "major_group" => @nagewaza
     }
   }
 
   let(:invalid_attributes) {
     {
-      "name" => "Nage-waza",
-      "major_group" => 0
+      "name" => "",
     }
   }
 
   let(:valid_headers) {
     {
-      content_type: "application/json; charset=utf-8; charset=utf-8"
+      content_type: "application/json; charset=utf-8;"
     }
   }
 

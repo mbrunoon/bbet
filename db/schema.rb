@@ -17,9 +17,10 @@ ActiveRecord::Schema.define(version: 2022_01_01_131819) do
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
-    t.integer "major_group"
+    t.bigint "group_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_groups_on_group_id"
   end
 
   create_table "techniques", force: :cascade do |t|

@@ -1,7 +1,12 @@
 class Group < ApplicationRecord
 
-	alias_attribute :parent_id, :major_group
-	alias_attribute :parent, :major_group
+
+	belongs_to :group, optional: true
+
+	alias_attribute :parent, :group
+	alias_attribute :parent_id, :group_id
+	alias_attribute :major_group, :group
+	alias_attribute :major_group_id, :group_id
 
 	validates :name, presence: true
 
