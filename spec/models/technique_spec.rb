@@ -24,5 +24,9 @@ RSpec.describe Technique, type: :model do
     expect(technique).to_not be_valid
   end
 
+  it "validate techinique relations" do
+    technique = Technique.create(name: "Seoi-nage", group: @group)
+    expect(technique.group).to eq(@group)
+  end
 
 end

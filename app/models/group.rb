@@ -1,5 +1,8 @@
 class Group < ApplicationRecord
 
+	alias_attribute :parent_id, :major_group
+	alias_attribute :parent, :major_group
+
 	validates :name, presence: true
 
 	validate :major_group_cannot_be_zero
