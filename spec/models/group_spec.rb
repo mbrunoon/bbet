@@ -50,4 +50,9 @@ RSpec.describe Group, type: :model do
     expect(@nagewaza.techiniques.pluck(:id)).to eq(nagewaza_techiniques)    
   end
 
+  it "validates rails:seed" do
+    Rails.application.load_seed
+    expect(Technique.all.count).to be > 0
+  end
+
 end

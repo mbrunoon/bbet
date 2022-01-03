@@ -29,4 +29,7 @@ RSpec.describe Technique, type: :model do
     expect(technique.group).to eq(@group)
   end
 
+  it "validates rails:seed" do
+  end
+
 end
