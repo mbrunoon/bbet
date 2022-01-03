@@ -25,7 +25,7 @@ class Group < ApplicationRecord
 		end
 	end
 
-	def techiniques
+	def techniques
 		Technique.where(group: self.subgroups)		
 	end
 

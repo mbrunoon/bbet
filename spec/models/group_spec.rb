@@ -28,30 +28,45 @@ RSpec.describe Group, type: :model do
   end
 
   it "return all techniques subgroups" do
-    expect(@nagewaza.subgroups.pluck(:id)).to eq([@tewaza.id, @ashiwaza.id])
+    expect(@nagewaza.subgroups.pluck(:id)).to match_array([@tewaza.id, @ashiwaza.id])
   end
 
   it "return all techniques from a group and subgroups" do
-
-    tewaza_techiniques = Technique.create([
+    tewaza_techniques = Technique.create([
       {name: "Seoi-nage", group: @tewaza},
       {name: "Ippon-seoi-nage", group: @tewaza},
       {name: "Seoi-otoshi", group: @tewaza},
     ]).pluck(:id)
 
-    ashiwaza_techiniques = Technique.create([
+    ashiwaza_techniques = Technique.create([
       {name: "O-soto-gari", group: @ashiwaza},
       {name: "Ashi-harai", group: @ashiwaza},
       {name: "Uchi-mata", group: @ashiwaza},
     ]).pluck(:id)
 
-    nagewaza_techiniques = tewaza_techiniques + ashiwaza_techiniques
+    nagewaza_techniques = tewaza_techniques + ashiwaza_techniques
 
-    expect(@nagewaza.techiniques.pluck(:id)).to eq(nagewaza_techiniques)    
+    expect(@nagewaza.techniques.pluck(:id)).to match_array(nagewaza_techniques)    
   end
 
-  it "validates rails:seed" do
-    Rails.application.load_seed
+  it "db:seed sentence" do
+    katamewaza = Group.new(name: "Katame-waza")
+    expect(katamewaza.save).to be true
+
+    osaekomiwaza = Group.new(name: "Osaekomi-waza", major_group: katamewaza)
+    expect(osaekomiwaza.save).to be true
+
+    Technique.create([{name: "Kesa-gatame", group: osaekomiwaza},
+      {name: "Kuzure-kesa-gatame", group: osaekomiwaza},
+      {name: "Ushiro-kesa-gatame", group: osaekomiwaza},
+      {name: "Kata-gatame", group: osaekomiwaza},
+      {name: "Kami-shiho-gatame", group: osaekomiwaza},
+      {name: "Kuzure-kami-shiho-gatame", group: osaekomiwaza},
+      {name: "Yoko-shiho-gatame", group: osaekomiwaza},
+      {name: "Tate-shiho-gatame", group: osaekomiwaza},
+      {name: "Uki-gatame", group: osaekomiwaza},
+      {name: "Ura-gatame", group: osaekomiwaza},
+    ])
     expect(Technique.all.count).to be > 0
   end
 

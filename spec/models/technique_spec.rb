@@ -6,10 +6,10 @@ RSpec.describe Technique, type: :model do
     @group = Group.create(name: "Tachi-waza")
   end
 
+
   it "validate presence of technique name" do
     technique = Technique.new({
       :name => "O-soto-gari",
-      :url => "https://www.youtube.com/watch?v=c-A_nP7mKAc",
       :group => @group
     })
     expect(technique).to be_valid
@@ -24,12 +24,14 @@ RSpec.describe Technique, type: :model do
     expect(technique).to_not be_valid
   end
 
-  it "validate techinique relations" do
+  it "validate technique relations" do
     technique = Technique.create(name: "Seoi-nage", group: @group)
     expect(technique.group).to eq(@group)
   end
 
-  it "validates rails:seed" do
+  it "db:seed" do
+    Rails.application.load_seed
+    expect(Technique.all.count).to be > 0
   end
 
 end
