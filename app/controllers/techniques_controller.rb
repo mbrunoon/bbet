@@ -1,10 +1,11 @@
 class TechniquesController < ApplicationController
+  
+  before_action :authorize_request
   before_action :set_technique, only: %i[ show update destroy ]
 
   # GET /techniques
   def index
     @techniques = Technique.all
-
     render json: @techniques
   end
 
