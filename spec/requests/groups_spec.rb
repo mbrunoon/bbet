@@ -4,6 +4,8 @@ RSpec.describe "/groups", type: :request do
 
   before(:all) do 
     @nagewaza = Group.create(name: "Nage-waza")
+    @user = User.create(username: "groups_request", email: "groups_request@teste.com", password: "9digitspassword")
+    @token = JsonWebToken.encode(user_id: @user.id)
   end
 
 
@@ -22,7 +24,8 @@ RSpec.describe "/groups", type: :request do
 
   let(:valid_headers) {
     {
-      content_type: "application/json; charset=utf-8;"
+      content_type: "application/json; charset=utf-8;",
+      authorization: "Bearer #{@token}"
     }
   }
 
@@ -37,7 +40,7 @@ RSpec.describe "/groups", type: :request do
   describe "GET /show" do
     it "renders a successful response" do
       group = Group.create! valid_attributes
-      get group_url(group), as: :json
+      get group_url(group), headers: valid_headers, as: :json
       expect(response).to be_successful
     end
   end
